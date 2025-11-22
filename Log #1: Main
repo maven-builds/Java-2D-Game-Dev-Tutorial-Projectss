@@ -1,0 +1,23 @@
+package main;
+
+import javax.swing.*;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        JFrame window = new JFrame(); // Create a new window
+        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Make the window "close-able"
+        window.setResizable(true); // Window cannot be resized
+        window.setTitle("My 2D Java Game"); // Window title
+
+        GamePanel gamePanel = new GamePanel(); // "Import" our GamePanel class through a "gamePanel" variable
+        window.add(gamePanel); // "Activates/Adds" our gamePanel class/variable
+        window.pack(); // "Packs" the window to fit the preferred size and layout of its subcomponents (GamePanel)
+
+        window.setLocationRelativeTo(null); // Window will be displayed at the center of the screen
+        window.setVisible(true); // Window will be visible
+
+        gamePanel.startGameThread(); // Activates our game thread
+    }
+}
